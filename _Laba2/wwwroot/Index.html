@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8">
+    <title>Kindiakova-K-26-2022-Lab2 Airport</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <h1>Кіндякова-K-26-2022-Lab2 Airport</h1>
+    <h2>Напрямки</h2>
+    <h3>Додати напрямок</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addDirection()">
+        <input type="text" id="add-countryFrom" placeholder="Країна вильоту">
+        <input type="text" id="add-countryTo" placeholder="Країна призначення">
+        <hr />
+        <input type="text" id="add-cityFrom" placeholder="Місто вильоту">
+        <input type="text" id="add-cityTo" placeholder="Місто призначення">
+        <hr />
+        <input type="text" id="add-terminalFrom" placeholder="Термінал вильоту">
+        <input type="text" id="add-terminalTo" placeholder="Термінал призначення">
+        <hr />
+        <input type="text" id="add-runwayFrom" placeholder="Смуга зльоту">
+        <input type="text" id="add-runwayTo" placeholder="Смуга посадки">
+        <hr />
+        <input type="submit" value="Додати">
+    </form>
+    <div id="editForm" style="display: none">
+        <h3>Редагувати</h3>
+        <form action="javascript:void(0);" onsubmit="updateDirection()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-countryFrom" placeholder="Країна вильоту">
+            <input type="text" id="edit-countryTo" placeholder="Країна призначення">
+            <hr />
+            <input type="text" id="edit-cityFrom" placeholder="Місто вильоту">
+            <input type="text" id="edit-cityTo" placeholder="Місто призначення">
+            <hr />
+            <input type="text" id="edit-terminalFrom" placeholder="Термінал вильоту">
+            <input type="text" id="edit-terminalTo" placeholder="Термінал призначення">
+            <hr />
+            <input type="text" id="edit-runwayFrom" placeholder="Смуга зльоту">
+            <input type="text" id="edit-runwayTo" placeholder="Смуга посадки">
+            <hr />
+            <input type="submit" value="Зберегти">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+
+        </form>
+    </div>
+    <p id="counter"></p>
+    <table>
+        <tr>            
+            <th>Виліт з</th>
+            <th>Місце призначення</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="directions"></tbody>
+    </table>
+    <script src="js/lab2.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+        getDirections();
+    </script>
+</body>
+</html>
